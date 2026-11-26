@@ -74,7 +74,7 @@ input::-webkit-outer-spin-button,input::-webkit-inner-spin-button{-webkit-appear
 .fld .u{color:var(--gray);flex:none;padding-right:2px}
 .pair input[type=range]{display:none}
 /* bottom bar */
-.bar{flex:none;display:flex;flex-wrap:nowrap;justify-content:space-between;gap:10px;padding:25px 20px 28px}
+.bar{flex:none;display:flex;flex-wrap:nowrap;justify-content:center;gap:10px;padding:25px 20px 28px}
 .bar .cd{height:50px}
 .bar .dv{height:30px}
 #typeC{min-width:535px;padding:0 18px;gap:15px}
@@ -849,7 +849,7 @@ m.innerHTML=L.map(v=>`<button class="ib" type="button" data-v="${v}">${v}</butto
 $("fsMenu").onclick=e=>{const b=e.target.closest("button[data-v]");if(!b)return;$("fs").value=b.dataset.v;$("fs").dispatchEvent(new Event("input",{bubbles:true}));$("fsMenu").hidden=true};
 document.addEventListener("input",e=>{if(e.target.type==="range")paintR()});
 /* keep the bottom bar's proportions on narrower desktop windows */
-function fitBar(){const b=document.querySelector(".bar");b.style.zoom="";if(innerWidth<=820)return;const k=Math.min(1,(innerWidth-40)/(b.scrollWidth-20));if(k<1)b.style.zoom=k}
+function fitBar(){const b=document.querySelector(".bar");b.style.zoom="";if(innerWidth<=820)return;const c=[...b.children],cw=c.reduce((t,e)=>t+e.getBoundingClientRect().width,0)+10*(c.length-1),k=Math.min(1,(innerWidth-40)/cw);if(k<1)b.style.zoom=k}
 addEventListener("resize",()=>{fitBar();if(fit)fitZoom();render()});
 /* ---- PDF ---- */
 function savePDF(){window.__scr=0;window.__ext=null;
