@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Type in Stitch</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Noto+Serif+KR:wght@200..900&family=Inter:wght@100..900&family=Baskervville:wght@400..700&family=Tiny5&family=Bitcount+Prop+Double:wght@100..900&family=Jacquarda+Bastarda+9&family=Cutive+Mono&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Noto+Serif+KR:wght@200..900&family=Inter:wght@100..900&family=Baskervville:wght@400..700&family=Tiny5&family=Silkscreen:wght@400;700&family=Jacquarda+Bastarda+9&family=Cutive+Mono&display=swap" rel="stylesheet">
 <style>
 @font-face{font-family:"DOSMyungjo";src:url("fonts/DOSMyungjo.woff2") format("woff2");font-display:swap}
 @font-face{font-family:"DOSGothic";src:url("fonts/DOSGothic.woff2") format("woff2");font-display:swap}
@@ -288,10 +288,10 @@ const FM={
 "Inter":{l:"Inter",c:'"Inter"',g:["Inter"]},
 "Baskervville":{l:"Baskervville",c:'"Baskervville"',g:["Baskervville"]},
 "Tiny5":{l:"Tiny5 (픽셀 8 · 대문자 5)",c:'"Tiny5"',g:["Tiny5"],px:8},
-"Bitcount Prop Double":{l:"Bitcount Prop Double (픽셀 10 · 대문자 6)",c:'"Bitcount Prop Double"',g:["Bitcount Prop Double"],px:10,dot:1},
+"Silkscreen":{l:"Silkscreen (픽셀 8 · 대문자 5)",c:'"Silkscreen"',g:["Silkscreen"],px:8},
 "Jacquarda Bastarda 9":{l:"Jacquarda Bastarda 9 (픽셀 13)",c:'"Jacquarda Bastarda 9"',g:["Jacquarda Bastarda 9"],px:13}};
 const ALLW=[100,200,300,400,500,600,700,800,900],WN={100:"Thin",200:"ExtraLight",300:"Light",400:"Regular",500:"Medium",600:"SemiBold",700:"Bold",800:"ExtraBold",900:"Black"};
-FM["Noto Sans KR"].w=ALLW;FM["Noto Serif KR"].w=ALLW.slice(1);FM["Inter"].w=ALLW;FM["Baskervville"].w=[400,500,600,700];FM["Bitcount Prop Double"].w=ALLW;["NeoDunggeunmo","DOSGothic","DOSMyungjo","Tiny5","Jacquarda Bastarda 9"].forEach(k=>FM[k].w=[400]);
+FM["Noto Sans KR"].w=ALLW;FM["Noto Serif KR"].w=ALLW.slice(1);FM["Inter"].w=ALLW;FM["Baskervville"].w=[400,500,600,700];FM["Silkscreen"].w=[400,700];["NeoDunggeunmo","DOSGothic","DOSMyungjo","Tiny5","Jacquarda Bastarda 9"].forEach(k=>FM[k].w=[400]);
 function snapW(f,w){const L=(FM[f]||FM["Noto Sans KR"]).w||ALLW;return L.reduce((a,b)=>Math.abs(b-w)<Math.abs(a-w)?b:a)}
 function fillW(f,w){const L=(FM[f]||FM["Noto Sans KR"]).w||ALLW,sel=$("weight");sel.innerHTML=L.map(x=>`<option value="${x}">${WN[x]} (${x})</option>`).join("");sel.value=snapW(f,w)}
 const gDef=document.createElement("optgroup"),gLoc=document.createElement("optgroup");gDef.label="기본 서체 / Default";gLoc.label="내 컴퓨터 서체 / Installed";

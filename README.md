@@ -62,7 +62,7 @@ Supabase 대시보드 → **Table Editor → patterns** 에서 행을 선택해 
 | 서체 | 출처 | 비고 |
 |---|---|---|
 | Noto Sans KR · Noto Serif KR · Inter · Baskervville | Google Fonts | |
-| Tiny5 · Bitcount Prop Double · Jacquarda Bastarda 9 | Google Fonts | 픽셀 서체 |
+| Tiny5 · Silkscreen · Jacquarda Bastarda 9 | Google Fonts | 픽셀 서체 |
 | Neo둥근모 · 도스고딕 · 도스명조 | `fonts/` 폴더 | 픽셀 서체 |
 
 ### 픽셀 서체 처리
@@ -70,9 +70,8 @@ Supabase 대시보드 → **Table Editor → patterns** 에서 행을 선택해 
 픽셀 서체는 서체 파일에 들어 있는 픽셀 격자를 그대로 도안으로 옮겨요.
 
 - **서체 픽셀 1개 = 도안 1칸.** 게이지(코·단 비율)와 상관없이 가로·세로 모두 1칸에 맞춰요.
-- 글자 크기는 서체의 기준 픽셀 수의 배수로만 바뀌어요. (Tiny5 8단 → 대문자 5단, Bitcount 10단 → 대문자 6단, Jacquarda Bastarda 9 13단, Neo둥근모·도스 16단)
+- 글자 크기는 서체의 기준 픽셀 수의 배수로만 바뀌어요. (Tiny5·Silkscreen 8단 → 대문자 5단, Jacquarda Bastarda 9 13단, Neo둥근모·도스 16단)
 - 장평은 100% 단위, 자간·행간은 1픽셀 단위로 맞춰져서 픽셀이 칸 사이에 걸치지 않아요.
-- Bitcount의 둥근 점은 점 하나를 픽셀 한 칸으로 봐요. (굵기 설정과 상관없이)
 - 최적화: **최소 도안 크기** = 서체 원래 크기(픽셀 1개 = 1칸), **가장 잘 보이게** = 2배(픽셀 1개 = 2×2칸)
 
 ## 폰트 라이선스
