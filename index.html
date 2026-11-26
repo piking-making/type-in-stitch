@@ -145,7 +145,7 @@ input[type=color]{width:100%;height:28px;border:1px solid var(--line);border-rad
 <span class="lang"><button id="lko">KO</button><button id="len">EN</button></span>
 </header>
 <main class="app">
-<textarea id="txt" class="hid" wrap="off" spellcheck="false">글자를 실로 써 보세요.
+<textarea id="txt" class="hid" wrap="off" spellcheck="false">글자를 실로 써 보세요
 Type in Stitch</textarea>
 <div class="ws" id="ws">
 <section class="pane" id="paneL"><div class="ph"><span id="lblL"></span></div><div class="pc" id="pcL"><canvas id="cvL"></canvas></div></section>
@@ -189,7 +189,7 @@ Type in Stitch</textarea>
 <details class="pn a-para" open><summary data-i="para"></summary><div class="in">
 <div data-sl="lh"></div>
 <div><label data-i="align"></label><div class="seg full" id="al"><button data-v="left" class="on" data-i="l"></button><button data-v="center" data-i="c"></button><button data-v="right" data-i="r"></button><button data-v="justify" data-i="j"></button></div></div></div></details>
-<details class="pn a-size" open><summary data-i="size"></summary><div class="in"><div data-sl="cols"></div><div data-sl="rows"></div><label class="chk span"><input type="checkbox" id="autosz"> <span data-i="autoSz"></span></label></div></details>
+<details class="pn a-size" open><summary data-i="size"></summary><div class="in"><div data-sl="cols"></div><div data-sl="rows"></div><label class="chk span"><input type="checkbox" id="autosz" checked> <span data-i="autoSz"></span></label></div></details>
 <details class="pn a-gauge" open><summary data-i="gauge"></summary><div class="in"><div data-sl="gst"></div><div data-sl="grw"></div></div></details>
 <details class="pn a-color" open><summary data-i="color"></summary><div class="in">
 <div><label data-i="cA"></label><input type="color" id="colA" value="#000000"></div>
@@ -245,13 +245,13 @@ const TX={
 ko:{title:"🧶 뜨개 도안 메이커",arch:"아카이브",arSub:"다른 사람들이 만든 도안을 구경하고, 불러와서 이어 만들 수 있어요.",arAll:"전체",arRefresh:"새로고침",arMore:"더 보기",arOpen:"불러오기",arDel:"삭제",arDelQ:"이 도안을 아카이브에서 삭제할까요?",arAnon:"익명",arLoading:"불러오는 중…",arEmpty:"아직 올라온 도안이 없어요. 첫 도안을 올려 보세요!",arErr:"아카이브에 연결하지 못했어요. 잠시 뒤 다시 시도해 주세요.",arNoCfg:"아카이브가 아직 연결되지 않았어요. (config.js에 Supabase 주소와 키를 넣어 주세요)",arSending:"올리는 중…",up:"아카이브에 올리기",upTitleL:"제목 (필수)",upNickL:"닉네임 (선택)",upNote:"올린 도안은 누구나 볼 수 있어요. 삭제는 올린 브라우저에서만 할 수 있어요.",upGo:"올리기",cancel:"취소",upNeedTitle:"제목을 입력해 주세요.",upTooBig:"도안이 너무 커서 올릴 수 없어요.",autoSz:"도안 크기 제한 없음 (글자에 맞춰 자동)",cKnit:"대바늘 (메리야스)",cCross:"십자수",cFilet:"코바늘 방안뜨기",craftT:"시뮬레이션 종류",optMin:"최소 도안 크기",optBest:"가장 잘 보이게",optMinT:"글자를 읽을 수 있는 선에서 가장 작은 글자 크기로 줄이고, 여백 2코·2단만 남겨 도안을 최소로 만들어요",optBestT:"글자가 가장 또렷하게 보이는 글자 크기로 맞추고, 여백 2코·2단만 남겨 도안 크기를 정해요",optRun:"최적화 중…",pxNote:k=>` · 서체 픽셀 1개 = ${k}×${k}칸`,optDone:(m,c,r,f)=>`${m==="min"?"최소 도안 크기":"가장 잘 보이게"} · ${c}코 × ${r}단 · 글자 크기 ${f}단`,optEmpty:"먼저 글자를 입력하세요",penColor:"펜 색상",tbox:"텍스트 상자",addBox:"상자 추가",delBox:"상자 삭제",bx:"X 위치 (코)",by:"Y 위치 (단)",bw:"너비 (코)",bh:"높이 (단)",newText:"텍스트",rect:"사각형",ellipse:"원",tri:"삼각형",bs:"선 굵기 (칸)",shapeMode:"도형 모드",fillm:"채움",strokem:"윤곽선",fhint:"내 컴퓨터에 설치된 서체도 쓸 수 있어요. 목록에서 불러오거나 이름을 직접 입력하세요. 설치되지 않은 PC에서는 고딕으로 대체돼요. 영문·픽셀 서체의 한글도 고딕으로 표시돼요.",weight:"굵기 (서체 패밀리)",tilt:"기울기 (Tilt °)",ls:"자간 (%)",lfont:"내 컴퓨터 서체 불러오기",fph:"서체 이름 직접 입력",fok:"설치된 서체 {n}개를 불러왔어요.",fno:"이 브라우저에서는 목록을 불러올 수 없어요. 서체 이름을 직접 입력해 주세요.",fadded:"추가했어요.",fmiss:"설치되어 있지 않은 서체 같아요. 대체 서체로 표시돼요.",hUndo:"이전으로 되돌리기",hRedo:"이후로 복귀",ph:"클릭해서 문구를 입력하세요",act:"작업",viewp:"보기",bef:"도안화 전",aft:"도안화 후",fit:"맞춤",para:"단락",tx:"문구",sel:"글자 선택",s1:"도안 제작",s2:"직접 그리기",s3:"내보내기",text:"문구 입력 (줄바꿈 가능)",hint:"클릭해 입력 · 드래그로 글자 선택",char:"글자 서식",font:"서체",bold:"굵게",fs:"글자 크기 (단 기준)",sx:"장평 (가로 비율 %)",lh:"행간",selAll:"전체 선택",fmtreset:"서식 초기화",align:"정렬",l:"왼쪽",c:"가운데",r:"오른쪽",j:"양끝",size:"도안 크기",cols:"가로 코 수",rows:"세로 단 수",gauge:"게이지 (10cm 기준)",gst:"코 수",grw:"단 수",color:"색상",cA:"글자색",cB:"바탕색",vText:"글자 (도안화 전)",chart:"도안",sim:"시뮬레이션",zoom:"확대",ghost:"원본 글자 겹쳐 보기",next2:"다음: 직접 그리기",next3:"다음: 내보내기",back:"이전",h2:"펜은 드래그해서 칠하고, 도형은 끌어서 크기를 정해요 (Shift: 정사각형/정원). 바탕색으로 칠하면 지울 수 있어요.",tools:"도구",pen:"펜",erase:"지우개",flip:"반전",undo:"되돌리기",clr:"그림 수정 초기화",h3:"완성된 도안을 PDF로 저장해요.",simPage:"시뮬레이션 미리보기 페이지 포함",pdf:"도안 PDF 저장",inf:(w,h,a,b)=>`완성 크기 약 ${w} × ${h} cm · ${b}코 중 ${a}코 무늬`,cn:"코",rn:"단",sum:(s,w,h)=>`${s.cols}코 × ${s.rows}단 · 게이지 ${s.gst}코 × ${s.grw}단 / 10cm · 약 ${w} × ${h} cm`},
 en:{title:"🧶 Knit Chart Maker",arch:"Archive",arSub:"Browse charts other people made, and load one to keep working on it.",arAll:"All",arRefresh:"Refresh",arMore:"Load more",arOpen:"Open",arDel:"Delete",arDelQ:"Delete this chart from the archive?",arAnon:"Anonymous",arLoading:"Loading…",arEmpty:"No charts yet. Upload the first one!",arErr:"Couldn't reach the archive. Please try again in a moment.",arNoCfg:"The archive isn't connected yet. (Put the Supabase URL and key in config.js)",arSending:"Uploading…",up:"Upload to archive",upTitleL:"Title (required)",upNickL:"Nickname (optional)",upNote:"Uploaded charts are public. You can delete one only from the browser that uploaded it.",upGo:"Upload",cancel:"Cancel",upNeedTitle:"Please enter a title.",upTooBig:"This chart is too large to upload.",autoSz:"No size limit (fit the chart to the text)",cKnit:"Knitting (stockinette)",cCross:"Cross stitch",cFilet:"Filet crochet",craftT:"Simulation type",optMin:"Smallest chart",optBest:"Clearest text",optMinT:"Shrinks the font to the smallest size that is still readable and trims the chart to the text with a 2-stitch/2-row margin",optBestT:"Sets the font to the size where the text reads most clearly and trims the chart to the text with a 2-stitch/2-row margin",optRun:"Optimizing…",pxNote:k=>` · 1 font pixel = ${k}×${k} cells`,optDone:(m,c,r,f)=>`${m==="min"?"Smallest chart":"Clearest text"} · ${c} st × ${r} rows · font size ${f} rows`,optEmpty:"Type some text first",penColor:"Pen color",tbox:"Text box",addBox:"Add box",delBox:"Delete box",bx:"X position (st)",by:"Y position (rows)",bw:"Width (st)",bh:"Height (rows)",newText:"Text",rect:"Rectangle",ellipse:"Circle",tri:"Triangle",bs:"Line width (cells)",shapeMode:"Shape mode",fillm:"Fill",strokem:"Outline",fhint:"You can also use fonts installed on your computer: load the list or type a name. On PCs without the font, the sans font is used. Hangul in Latin and pixel fonts also uses the sans font.",weight:"Weight (font family)",tilt:"Tilt (°)",ls:"Letter spacing (%)",lfont:"Load my computer's fonts",fph:"Type a font name",fok:"Loaded {n} installed fonts.",fno:"This browser can't list fonts. Please type the font name instead.",fadded:"Added.",fmiss:"That font doesn't seem to be installed; a fallback is shown.",hUndo:"Undo",hRedo:"Redo",ph:"Click to type your text",act:"Actions",viewp:"View",bef:"Before (text)",aft:"After (chart)",fit:"Fit",para:"Paragraph",tx:"Text",sel:"Select text",s1:"Create chart",s2:"Draw by hand",s3:"Export",text:"Your text (line breaks OK)",hint:"Click to type · drag to select",char:"Character",font:"Typeface",bold:"Bold",fs:"Font size (in rows)",sx:"Width scale (%)",lh:"Line height",selAll:"Select all",fmtreset:"Reset style",align:"Alignment",l:"Left",c:"Center",r:"Right",j:"Justify",size:"Chart size",cols:"Stitches (width)",rows:"Rows (height)",gauge:"Gauge (per 10 cm)",gst:"Stitches",grw:"Rows",color:"Colors",cA:"Text color",cB:"Background",vText:"Text (before)",chart:"Chart",sim:"Simulation",zoom:"Zoom",ghost:"Overlay original text",next2:"Next: Draw by hand",next3:"Next: Export",back:"Back",h2:"Drag to paint with the pen; drag out a shape to size it (Shift: square/circle). Paint with the background color to erase.",tools:"Tools",pen:"Pen",erase:"Eraser",flip:"Flip",undo:"Undo",clr:"Clear hand edits",h3:"Save your finished chart as a PDF.",simPage:"Include simulation preview page",pdf:"Save chart PDF",inf:(w,h,a,b)=>`Finished size about ${w} × ${h} cm · ${a} of ${b} stitches in pattern`,cn:"st",rn:"row",sum:(s,w,h)=>`${s.cols} st × ${s.rows} rows · gauge ${s.gst} st × ${s.grw} rows / 10 cm · about ${w} × ${h} cm`}
 };
-const SL=[["fs",3,200,1,18],["sx",40,180,1,100],["tilt",-30,30,1,0],["ls",-20,100,1,0],["lh",.8,2.5,.05,1.3],["cols",5,400,1,122],["rows",5,500,1,46],["gst",5,60,.5,22],["grw",5,80,.5,30],["bs",1,20,1,1]];
+const SL=[["fs",3,200,1,16],["sx",40,180,1,100],["tilt",-30,30,1,0],["ls",-20,100,1,0],["lh",.8,2.5,.05,1.3],["cols",5,400,1,122],["rows",5,500,1,46],["gst",5,60,.5,22],["grw",5,80,.5,30],["bs",1,20,1,1]];
 SL.forEach(([id,mn,mx,st,v])=>{document.querySelector(`[data-sl=${id}]`).innerHTML=`<label data-i="${id}"></label><div class="pair"><input type="range" id="${id}R" min="${mn}" max="${mx}" step="${st}" value="${v}"><input type="number" id="${id}" min="${mn}" max="${mx}" step="${st}" value="${v}"></div>`});
 const setVal=(id,v)=>{$(id).value=v;$(id+"R").value=v};
 
 let lang=(navigator.language||"ko").startsWith("ko")?"ko":"en",modeR="chart",tool="pen",fillMode="fill",step=1,fit=true;
 let caretOn=true,bits=null,oc=null,pc=0,pr=0,undo=[],busy=false,again=false,tcv=null,lay={};
-const DG={font:"Noto Sans KR",weight:300,fs:18,sx:100,tilt:0,ls:0,lh:1.3};
+const DG={font:"Noto Sans KR",weight:300,fs:16,sx:100,tilt:0,ls:0,lh:1.3};
 const txtEl=$("txt"),cvL=$("cvL"),cvR=$("cvR");
 let uid=1,cur=null,selR={a:0,b:0},prevText=txtEl.value;
 const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
@@ -340,7 +340,7 @@ else if(k==="bs"){}
 else{if(k==="cols"||k==="rows"){boxes.forEach(b=>b.full=true);lastOpt=null}build()}});
 $("al").onclick=e=>{const b=e.target.closest("button");if(!b)return;B().align=b.dataset.v;setAlignUI(b.dataset.v);pushHist();build()};
 /* ---- text -> bitmap (all boxes) ---- */
-let autoSize=false;
+let autoSize=true;
 async function build(){
 if(busy){again=true;return}busy=true;
 try{await doBuild();if(autoSize)await fitAll()}catch(e){console.error(e)}
@@ -835,7 +835,7 @@ try{doc.save("knit-chart.pdf")}catch(e){window.open(doc.output("bloburl"),"_blan
 }
 $("lko").onclick=()=>{lang="ko";applyLang()};$("len").onclick=()=>{lang="en";applyLang()};
 ["colA","colB"].forEach(i=>$(i).addEventListener("input",render));
-icons();applyLang();pushHist();goStep(1);updPanel();build();
+icons();applyLang();pushHist();goStep(1);updPanel();["cols","rows"].forEach(k=>{$(k).disabled=autoSize;$(k+"R").disabled=autoSize});build();
 </script>
 </body>
 </html>
