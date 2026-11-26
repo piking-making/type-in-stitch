@@ -77,7 +77,7 @@ input::-webkit-outer-spin-button,input::-webkit-inner-spin-button{-webkit-appear
 .bar{flex:none;display:flex;flex-wrap:nowrap;justify-content:space-between;gap:10px;padding:25px 20px 28px}
 .bar .cd{height:50px}
 .bar .dv{height:30px}
-#typeC{width:535px;padding:0 18px;gap:15px}
+#typeC{min-width:535px;padding:0 18px;gap:15px}
 #font{width:143px}#weight{width:77px}
 .fsz{position:relative;display:flex;align-items:center;width:49px;height:24px;border-bottom:1px solid var(--gray)}
 .fsz input{text-align:left;width:100%}
@@ -183,7 +183,7 @@ Type in Stitch</textarea>
 <div class="pw"><button class="ib" id="typeB"><span data-fi="settings"></span></button>
 <div class="pop" id="typePop" hidden><div data-sl="ls" data-m="pop"></div><div data-sl="sx" data-m="pop"></div><div data-sl="tilt" data-m="pop"></div></div></div>
 <span class="dv"></span>
-<div id="al"><button data-v="left" class="ib on" data-ti="l"><span data-fi="alignL"></span></button><button data-v="center" class="ib" data-ti="c"><span data-fi="alignC"></span></button><button data-v="right" class="ib" data-ti="r"><span data-fi="alignR"></span></button></div>
+<div id="al"><button data-v="left" class="ib on" data-ti="l"><span data-fi="alignL"></span></button><button data-v="center" class="ib" data-ti="c"><span data-fi="alignC"></span></button><button data-v="right" class="ib" data-ti="r"><span data-fi="alignR"></span></button><button data-v="justify" class="ib" data-ti="j"><span data-fi="alignJ"></span></button></div>
 <span class="dv"></span>
 <div class="pw"><button class="ib" id="lhB" data-ti="lh"><span data-fi="lineh"></span></button>
 <div class="pop" id="lhPop" hidden><div data-sl="lh" data-m="pop"></div></div></div>
@@ -248,6 +248,7 @@ settings:[18,18,"M8 18V12H10V14H18V16H10V18H8ZM0 16V14H6V16H0ZM4 12V10H0V8H4V6H6
 alignL:[18,18,"M0 18V16H18V18H0ZM0 14V12H12V14H0ZM0 10V8H18V10H0ZM0 6V4H12V6H0ZM0 2V0H18V2H0Z"],
 alignC:[18,18,"M0 18V16H18V18H0ZM4 14V12H14V14H4ZM0 10V8H18V10H0ZM4 6V4H14V6H4ZM0 2V0H18V2H0Z"],
 alignR:[18,18,"M0 2V0H18V2H0ZM6 6V4H18V6H6ZM0 10V8H18V10H0ZM6 14V12H18V14H6ZM0 18V16H18V18H0Z"],
+alignJ:[18,18,"M0 18V16H18V18H0ZM0 14V12H18V14H0ZM0 10V8H18V10H0ZM0 6V4H18V6H0ZM0 2V0H18V2H0Z"],
 lineh:[22,18,"M4.4 18L0 13.5L1.54 11.925L3.3 13.6687V4.33125L1.54 6.075L0 4.5L4.4 0L8.8 4.5L7.26 6.075L5.5 4.33125V13.6687L7.26 11.925L8.8 13.5L4.4 18ZM11 16.875V14.625H22V16.875H11ZM11 10.125V7.875H22V10.125H11ZM11 3.375V1.125H22V3.375H11Z"],
 pen:[30,30,"M6.25 23.75H8.0375L20.25 11.5375L18.475 9.75005L6.25 21.975V23.75ZM3.75 26.25V20.9375L20.25 4.46255C20.5 4.22922 20.775 4.05005 21.075 3.92505C21.375 3.80005 21.6958 3.74172 22.0375 3.75005C22.3708 3.75005 22.6958 3.81255 23.0125 3.93755C23.3292 4.06255 23.5958 4.25005 23.8125 4.50005L25.5375 6.25005C25.7875 6.47505 25.9708 6.74588 26.0875 7.06255C26.2042 7.37922 26.2583 7.69172 26.25 8.00005C26.25 8.33338 26.1917 8.65005 26.075 8.95005C25.9583 9.25005 25.7792 9.52505 25.5375 9.77505L9.0625 26.25H3.75ZM19.35 10.65L18.475 9.75005L20.25 11.5375L19.35 10.6625V10.65Z"],
 bucket:[24,23,"M7.98053 22.3939L0.60078 14.9495C0.400787 14.7477 0.252792 14.5258 0.156795 14.2837C0.0607981 14.0416 0.0087997 13.7914 0.000799972 13.5332C-0.00719976 13.275 0.0447986 13.0207 0.156795 12.7706C0.268791 12.5204 0.416786 12.2985 0.60078 12.1048L7.50055 5.16876L4.32066 1.97309L6.18059 0L18.1802 12.1048C18.3802 12.3066 18.5242 12.5285 18.6122 12.7706C18.7002 13.0127 18.7442 13.2669 18.7442 13.5332C18.7442 13.7995 18.7002 14.0497 18.6122 14.2837C18.5242 14.5177 18.3802 14.7396 18.1802 14.9495L10.8004 22.3939C10.6004 22.5957 10.3805 22.749 10.1405 22.8539C9.90047 22.9588 9.65248 23.0072 9.39649 22.9992C9.1405 22.9911 8.8885 22.9427 8.64051 22.8539C8.39252 22.7651 8.17253 22.6118 7.98053 22.3939ZM9.39649 7.08132L2.9767 13.5574H15.8163L9.39649 7.08132ZM21.3601 22.9992C20.6401 22.9992 20.0321 22.7409 19.5361 22.2244C19.0402 21.708 18.7882 21.0785 18.7802 20.3361C18.7802 19.7873 18.9162 19.2709 19.1882 18.7867C19.4602 18.3025 19.7641 17.8304 20.1001 17.3704L21.3601 15.7363L22.68 17.3704C23 17.8304 23.3 18.3025 23.58 18.7867C23.86 19.2789 24 19.7954 24 20.3361C24 21.0866 23.74 21.716 23.22 22.2244C22.7 22.7328 22.0801 22.9911 21.3601 22.9992Z"],
@@ -780,9 +781,9 @@ $("arRefresh").onclick=()=>arLoad(true);
 
 /* ---- no size limit: chart follows the text (line breaks only where typed), 2-stitch/2-row margin ---- */
 async function fitAll(){const b=B();if(!b.text.trim())return;let mx=b.G.fs*b.G.lh;for(let i=0;i<b.text.length;i++){const e=effB(b,i);mx=Math.max(mx,e.fs*e.lh)}
-const R=Math.min(500,Math.ceil(b.text.split("\n").length*mx*1.6+mx)+6);setVal("cols",400);setVal("rows",R);Object.assign(b,{full:false,x:0,y:0,w:400,h:R});await doBuild();
+const R=Math.min(500,Math.ceil(b.text.split("\n").length*mx*1.6+mx)+6);const ja=b.align==="justify";if(ja)b.align="left";setVal("cols",400);setVal("rows",R);Object.assign(b,{full:false,x:0,y:0,w:400,h:R});await doBuild();
 const s=S(),m=2;let x0=1e9,x1=-1,y0=1e9,y1=-1;for(let r=0;r<s.rows;r++)for(let q=0;q<s.cols;q++)if(bits[r*s.cols+q]){if(q<x0)x0=q;if(q>x1)x1=q;if(r<y0)y0=r;if(r>y1)y1=r}
-if(x1>=0){b.x=-(x0-m);b.y=-(y0-m);setVal("cols",clamp(x1-x0+1+2*m,5,400));setVal("rows",clamp(y1-y0+1+2*m,5,500))}b.wRel=null;await doBuild()}
+if(ja){b.align="justify";const ly=lay[b.id],cwp=tcv.width/s.cols;let aw=0;if(ly)ly.lines.forEach(l=>l.g.forEach(q=>aw=Math.max(aw,q.x+q.w)));if(aw){b.w=Math.ceil(aw/cwp+1e-6);if(x1>=0)x1=Math.max(x1,b.w-1)}}if(x1>=0){b.x=-(x0-m);b.y=-(y0-m);setVal("cols",clamp(x1-x0+1+2*m,5,400));setVal("rows",clamp(y1-y0+1+2*m,5,500))}b.wRel=null;await doBuild()}
 $("autoB").onclick=()=>{const c=$("autosz");c.checked=!c.checked;c.dispatchEvent(new Event("change"))};
 $("autosz").onchange=e=>{autoSize=e.target.checked;syncTb();["cols","rows"].forEach(k=>{$(k).disabled=autoSize;$(k+"R").disabled=autoSize});
 if(!autoSize){const b=B();b.full=true;b.x=0;b.y=0}lastOpt=null;fit=true;build()};
