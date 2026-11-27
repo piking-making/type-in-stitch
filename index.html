@@ -14,7 +14,7 @@
 --mono:"Cutive Mono","Courier New",monospace;--shadow:0 4px 6px rgba(0,0,0,.15);color-scheme:light}
 [hidden]{display:none!important}
 *{box-sizing:border-box}
-body{margin:0;background:#fff;color:var(--fg);font:500 12px/1.4 "Noto Sans KR",system-ui,sans-serif;height:100vh;position:relative;overflow:hidden}
+body{margin:0;background:var(--bg);color:var(--fg);font:500 12px/1.4 "Noto Sans KR",system-ui,sans-serif;height:100vh;position:relative;overflow:hidden}
 button{font:inherit;cursor:pointer;border:1px solid var(--line);background:var(--panel);color:var(--fg);border-radius:4px;padding:0 12px;height:28px;display:inline-flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap}
 button:hover{border-color:var(--fg)}
 button.on,button.primary{background:var(--accent);color:var(--accent-fg);border-color:var(--accent)}
@@ -44,7 +44,7 @@ body.darktop:not(.arch) #steps .ib,body.darktop:not(.arch) .lang .ib{color:rgba(
 body.darktop:not(.arch) #steps button.ib.on,body.darktop:not(.arch) #steps .ib:hover,body.darktop:not(.arch) .lang .ib.on{color:#fff}
 body.darktop:not(.arch) #steps button.ib.on{border-bottom-color:#fff}
 /* canvas: the whole window */
-.app{position:absolute;inset:0;background:#fff}
+.app{position:absolute;inset:0;background:var(--bg)}
 .ws{position:absolute;inset:0;display:flex}
 .pane{flex:1;min-width:0;min-height:0;display:flex;flex-direction:column}
 .pc{flex:1;overflow:auto;display:flex}
@@ -146,7 +146,7 @@ input::-webkit-outer-spin-button,input::-webkit-inner-spin-button{-webkit-appear
 #zs .zk{position:absolute;left:0;width:11px;height:11px;margin-top:-5.5px;border-radius:50%;background:#fff;border:1px solid #000}
 /* archive */
 body.arch .app{display:none}
-#arch{position:absolute;inset:86px 0 0;overflow:auto;padding:8px 20px 40px;background:#fff}
+#arch{position:absolute;inset:86px 0 0;overflow:auto;padding:8px 20px 40px;background:var(--bg)}
 .arhead{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;padding-top:12px;margin-bottom:12px;flex-wrap:wrap}
 .arhead h2{margin:0;font:400 26px/1.2 var(--mono)}.arhead .hint{margin-top:4px}
 .arctl{display:flex;gap:8px;align-items:center}#arRefresh{width:28px;padding:0}
