@@ -654,7 +654,7 @@ else if(dCells){const[q0,r0,q1,r1]=dCells,ctx=cv.getContext("2d"),E={x0:g.L+(q0-
 dAll=false;dCells=null;
 const o=cvO.getContext("2d");o.save();o.setTransform(1,0,0,1,0,0);o.clearRect(0,0,cvO.width,cvO.height);o.restore();if(!drawMode)textOverlay(o,g,z,s,"#2d7ff9")}
 function fitZoom(){const s=S(),p=$("pcR"),pw=p.clientWidth,ph=p.clientHeight;if(!pw)return;const vh=p.parentElement.parentElement.classList.contains("chartv")?ph-HEAD-DOCK:ph-HEAD-DOCK;
-const zw=(pw-120-104)/s.cols,zh=(vh-40-72)/(s.rows*s.gst/s.grw);
+const sim=modeR==="sim",zw=(pw-(sim?120:224))/s.cols,zh=(vh-(sim?10:92))/(s.rows*s.gst/s.grw);
 $("zoom").value=clamp(Math.floor(Math.min(zw,zh)*2)/2,2,40);paintZ()}
 function updLabels(){const t=TX[lang];$("lblL").textContent=step===3?t.chart:t.bef;$("lblR").textContent=step===3?t.sim:step===2?t.s2:t.aft}
 
@@ -742,8 +742,16 @@ function headTone(){const c=rgbOf($("colB").value),l=(c[0]*.3+c[1]*.59+c[2]*.11)
 $("colB").addEventListener("input",headTone);
 function applyView(){const v=view[1]==="chart"?"chart":"sim";view[1]=v;modeR=v;$("ws").classList.toggle("chartv",v==="chart");headTone();
 [...$("modeR").children].forEach(x=>x.classList.toggle("on",x.dataset.v===v))}
+/* each craft opens with its own sample text/size/colours, as long as the user hasn't changed the previous sample */
+const CRAFT_DEF={knit:{t:"글자를 실로 써 보세요\nType in Stitch",fs:16,a:"#000000",b:"#ffffff"},cross:{t:"실과 바늘로\n글쓰기",fs:15,a:"#000000",b:"#ffffff"},filet:{t:"뜨개질",fs:14,a:"#ffffff",b:"#9c9c9c"}};
+let sampleCraft="knit";
+function applySample(_,to){const b=B(),d=CRAFT_DEF[sampleCraft],n=CRAFT_DEF[to];if(!d||!n)return;
+ const same=b.text===d.t&&b.G.fs===d.fs&&$("colA").value.toLowerCase()===d.a&&$("colB").value.toLowerCase()===d.b&&b.styles.every(x=>!x||!Object.keys(x).length)&&!dr.size;
+ if(!same){sampleCraft=null;return}
+ b.text=n.t;b.styles=Array.from({length:n.t.length},()=>null);b.G.fs=n.fs;txtEl.value=n.t;prevText=n.t;setVal("fs",n.fs);
+ $("colA").value=n.a;$("colB").value=n.b;sampleCraft=to;const L=n.t.length;setSel(L,L);syncTb();headTone();pushHist()}
 $("craft").onchange=e=>{const old=CRAFT_GAUGE[craft],nw=CRAFT_GAUGE[e.target.value],oS=CRAFT_SIZE[craft],nS=CRAFT_SIZE[e.target.value];
-if(!autoSize&&!lastOpt&&num("cols",0)===oS[0]&&num("rows",0)===oS[1]){setVal("cols",nS[0]);setVal("rows",nS[1])}craft=e.target.value;
+if(!autoSize&&!lastOpt&&num("cols",0)===oS[0]&&num("rows",0)===oS[1]){setVal("cols",nS[0]);setVal("rows",nS[1])}craft=e.target.value;applySample(old===nw?null:0,e.target.value);
 if(num("gst",0)===old[0]&&num("grw",0)===old[1]){setVal("gst",nw[0]);setVal("grw",nw[1]);if(!B().full&&lastOpt)optimize(lastOpt);else{if(fit)fitZoom();build()}}else render()};
 $("modeR").onclick=e=>{const b=e.target.closest("button");if(!b)return;view[1]=b.dataset.v;applyView();if(fit)fitZoom();render()};
 $("pdfbtn").onclick=()=>{$("saveMenu").hidden=true;savePDF()};$("jpgbtn").onclick=()=>{$("saveMenu").hidden=true;saveJPG()};
